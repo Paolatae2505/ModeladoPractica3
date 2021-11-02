@@ -8,6 +8,10 @@ public class LasPizzasDeDonCangrejo {
 
     private Pizza [] pizzas = new Pizza[5];
 
+    /**
+     * Agrega las unicas cinco Pizzas que tiene  por defecto 
+     * la clase
+     */
     private void AgregarPizzas(){
        PizzaDeJamon pizzaDeJamon = new PizzaDeJamon();
        PizzaDeJamonConSalchicha pizzaDeJamonConSalchicha = new PizzaDeJamonConSalchicha();
@@ -20,7 +24,9 @@ public class LasPizzasDeDonCangrejo {
         pizzas[3] = pizzaDeSalchicha;
         pizzas[4] = pizzaDeSalchichaConPollo;
     }
-
+    /**
+     * Imprime el menu de pizzas.
+     */
     public void menuPizzas(){
         Pizza pizza = null;
         System.out.println("-------------------------------------------");
@@ -40,7 +46,12 @@ public class LasPizzasDeDonCangrejo {
             System.out.println("-------------------------------------------");
         }
     }
-
+    /**
+     * Elige una Pizza de acuerdo a la eleccion del cliente 
+     * en un rango de [1,5].
+     * @param numPizza --- int numero de Pizza a elegir
+     * @return -- Pizza elegida por el cliente
+     */
     public Pizza elegirPizza(int numPizza){
         Pizza pizza = null;
 
@@ -75,7 +86,4 @@ public class LasPizzasDeDonCangrejo {
         return pizza;
     }
 
-
-
-    
 }

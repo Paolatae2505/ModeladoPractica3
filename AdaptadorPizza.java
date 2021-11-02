@@ -19,8 +19,8 @@ public class AdaptadorPizza implements ProductoBaguette{
 
     /**
      * Regresa la descripcion de la Baguette adapatada 
-     * @return --- String descripcion de la Baguette
-     *             adaptada
+     * @return --- String descripcion de la Pizza 
+     *             adaptada a la Baguette
      */
     public String getDescripcion(){
        String descripcion = "";
@@ -30,7 +30,10 @@ public class AdaptadorPizza implements ProductoBaguette{
        return descripcion;
     }
     /**
-     * Regresa el costo de la Baguette adapatada
+     * Regresa el costo de la Pizza Adapatada a la 
+     * Baguette
+     * @return --- double costo de la Pizza Adaptada
+     *              a la Baguette
      */
     public double getCosto(){
         return pizza.getCosto();
