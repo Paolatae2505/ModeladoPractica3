@@ -1,21 +1,33 @@
 import java.util.Scanner;
-
+/**
+ * Main de simulacion del Restaurante WaySub
+ * @author Baron Herrea Victoria Helena
+ * @author Vargas Bravo Paola
+ * @version 2.5 (02 de Noviembre del 2021)
+ * @since Modelado Y Programacion (2022-1)
+ */
 public class RestauranteWaySub {
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
         int eleccion = 0;
+        boolean salir = false;
         AdaptadorPizza adaptadorPizza;
         LasPizzasDeDonCangrejo restauranteAbsorbido = new LasPizzasDeDonCangrejo();
+        while(salir == false){
         System.out.println("--------------------------------------------------");
-        System.out.println("-------Bienvenido al Restaurante WaySub---------");
+        System.out.println("-------Bienvenido al Restaurante WaySub-----------");
         System.out.println("--------------------------------------------------");
-        System.out.println("Tenemos dos opciones en nuestra sucursal : -------");
         System.out.println("1) Baguette   ------------------------------------");
         System.out.println("2) Pizza   ---------------------------------------");
+        System.out.println("3) Salir  ----------------------------------------");
         System.out.println("--------------------------------------------------");
         System.out.println("¿Cuál te gustaria ordenar? -----------------------");
         System.out.println("--------------------------------------------------");
+        while (!entrada.hasNextInt()) {
+            System.out.println("<Da una opción válida !!!>");
+            entrada.nextLine();
+        }
         eleccion = entrada.nextInt();
         switch (eleccion) {
             case 1:
@@ -25,6 +37,10 @@ public class RestauranteWaySub {
                 System.out.println("1. Pan Blanco ----------------- $30.00");
                 System.out.println("2. Pan De Avena Con Miel ------ $50.00");
                 System.out.println("3. Pan De Oregano ------------- $35.00");
+                while (!entrada.hasNextInt()) {
+                    System.out.println("<Da una opción válida !!!>");
+                    entrada.nextLine();
+                }
                 int numTipoDePan = entrada.nextInt();
                 switch (numTipoDePan) {
                     case 1:
@@ -58,9 +74,14 @@ public class RestauranteWaySub {
                     System.out.println("8) Mostaza ------------------ +$1.00");
                     System.out.println("9) Pollo -------------------- +$10.00");
                     System.out.println("10) Es todo.");
+                    while (!entrada.hasNextInt()) {
+                        System.out.println("<Da una opción válida !!!>");
+                        entrada.nextLine();
+                    }
                     numIngredientes = entrada.nextInt();
                     switch (numIngredientes) {
                         case 1:
+                        
                             baguette = new Cebolla(baguette);
                             break;
 
@@ -97,7 +118,7 @@ public class RestauranteWaySub {
                             break;
 
                         case 10:
-                            //System.out.println(new TicketWaySub(baguette).toString());
+                            System.out.println(new TicketWaySub(baguette).toString());
                             break;
 
                         default:
@@ -110,21 +131,40 @@ public class RestauranteWaySub {
                 break;
 
             case 2:
+                boolean esNegativo = true;
                 Pizza pizza = null;
+                int eleccionPizza = 0;
                 System.out.println("Has elegido la opción de pizza....");
                 restauranteAbsorbido.menuPizzas();
                 System.out.println("Digite el número de la pizza a ordenar...");
-                int eleccionPizza = entrada.nextInt();
+                do{
+                    System.out.println("Elije una Opcion : ");
+                    try{
+        
+                        eleccionPizza = entrada.nextInt();
+                    }catch(Exception e){
+                        System.out.println("Ingresa numeros por favor....");
+                        entrada.nextLine();
+        
+                    }
+                    if(eleccionPizza <= 0 || eleccionPizza > 5){
+                        System.out.println("Esa no es una opción váida");
+                    }
+                }while(eleccionPizza <= 0  || eleccionPizza > 5);
+               // eleccionPizza = entrada.nextInt();
                 pizza = restauranteAbsorbido.elegirPizza(eleccionPizza);
                 adaptadorPizza = new AdaptadorPizza(pizza);
-                new TicketWaySub(adaptadorPizza).toString();
+                System.out.println (new TicketWaySub(adaptadorPizza).toString());
                 System.out.println("¡Gracias por su compra!");
                 break;
 
+            case 3 :
+            salir = true;
+            System.out.println("Nos vemos, hasta la proxima !!!");
             default:
                 System.out.println("Lo sentimos esa no es una opcion");
                 break;
         }
+      }
     }
-
 }

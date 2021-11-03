@@ -9,10 +9,10 @@ public class LasPizzasDeDonCangrejo {
     private Pizza [] pizzas = new Pizza[5];
 
     /**
-     * Agrega las unicas cinco Pizzas que tiene  por defecto 
-     * la clase
+     * Crea una instacia de el Restaurante 
+     * Las Pizzas de Don Cangrejo
      */
-    private void AgregarPizzas(){
+    public LasPizzasDeDonCangrejo(){
        PizzaDeJamon pizzaDeJamon = new PizzaDeJamon();
        PizzaDeJamonConSalchicha pizzaDeJamonConSalchicha = new PizzaDeJamonConSalchicha();
        PizzaDePollo pizzaDePollo = new PizzaDePollo();
@@ -40,8 +40,11 @@ public class LasPizzasDeDonCangrejo {
             System.out.println("Numero de Pizza :" + numPizza);
             System.out.println(pizza.getNombre());
             System.out.println("Contiene .... :");
+            System.out.println("Tipo de Queso... : ");
             System.out.println(pizza.getQueso());
+            System.out.println("Tipo de Carne... : ");
             System.out.println(pizza.getCarne());
+            System.out.println("Tipo de Masa... : ");
             System.out.println(pizza.getMasa());
             System.out.println("-------------------------------------------");
         }
