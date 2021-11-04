@@ -87,11 +87,11 @@ public class RestauranteWaySub {
                     System.out.println("9) Pollo -------------------- +$10.00");
                     System.out.println("10) Es todo --------------------------");
                     System.out.println("--------------------------------------");
-                    while (!entrada.hasNextInt()) {
+                    numIngredientes = entrada.nextInt();
+                    while (!entrada.hasNextInt() ) {
                         System.out.println("<Da una opción válida !!!>");
                         entrada.nextLine();
                     }
-                    numIngredientes = entrada.nextInt();
                     switch (numIngredientes) {
                         case 1:
 

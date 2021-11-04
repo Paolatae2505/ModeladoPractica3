@@ -9,15 +9,15 @@ public class PanBlanco  extends TipoDePan{
 
     /**
      * Crea una envoltura de Plan Blanco
-     * @param baguette --- ProductoBaguette 
+     * @param baguette --- ProductoBaguette
      *                     a envolver
      */
     public PanBlanco(ProductoBaguette baguette){
         super(baguette);
     }
     /**
-     * Obtiene la descripcion del Baguette con 
-     * la encoltura de Pan Blanco
+     * Obtiene la descripcion del Baguette con
+     * la envoltura de Pan Blanco
      * @return ---String del Baguette mas la
      *            envoltura de Pan Blanco
      */
@@ -26,10 +26,10 @@ public class PanBlanco  extends TipoDePan{
        return baguette.getDescripcion() + "Pan Blanco \n";
     }
      /**
-     * Obtiene el costo de la Baguette mas la 
+     * Obtiene el costo de la Baguette mas la
      * envoltura del Plan Blanco
-     * @return --- double del costo de la baguette 
-     *             mas el precio de la envoltura 
+     * @return --- double del costo de la baguette
+     *             mas el precio de la envoltura
      *             de Pan Blanco
      */
     @Override
