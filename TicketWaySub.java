@@ -7,7 +7,6 @@
  */
 public class TicketWaySub {
     private ProductoBaguette baguette;
-
     /**
      * Crea una instancia de la clase TicketWaySub
      * @param baguette Baguette para la que creará el ticket
@@ -28,7 +27,7 @@ public class TicketWaySub {
                 "\n-- Resumen de compra: -----------\n" +
                 baguette.getDescripcion() + "\n"
                 + "----------Total a pagar----------"
-                + "\n -- $" + baguette.getCosto() +
+                + "\n -- $" + String.format("%.2f",baguette.getCosto()) +
                 "\n---------------------------------\n";
 
     }
