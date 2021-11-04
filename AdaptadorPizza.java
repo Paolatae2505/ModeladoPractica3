@@ -18,19 +18,19 @@ public class AdaptadorPizza implements ProductoBaguette{
     }
 
     /**
-     * Regresa la descripcion de la Baguette adapatada 
-     * @return --- String descripcion de la Pizza 
+     * Regresa la descripcion de la Baguette adapatada
+     * @return --- String descripcion de la Pizza
      *             adaptada a la Baguette
      */
     public String getDescripcion(){
        String descripcion = "";
-       descripcion = pizza.getNombre() + 
-       "," + pizza.getQueso() + "," + pizza.getCarne() +
-       "," + pizza.getMasa();
+       descripcion = pizza.getNombre() +
+       "\n" + pizza.getQueso() + "\n" + pizza.getCarne() +
+       "\n" + pizza.getMasa();
        return descripcion;
     }
     /**
-     * Regresa el costo de la Pizza Adapatada a la 
+     * Regresa el costo de la Pizza Adapatada a la
      * Baguette
      * @return --- double costo de la Pizza Adaptada
      *              a la Baguette
@@ -38,5 +38,5 @@ public class AdaptadorPizza implements ProductoBaguette{
     public double getCosto(){
         return pizza.getCosto();
     }
-    
+
 }

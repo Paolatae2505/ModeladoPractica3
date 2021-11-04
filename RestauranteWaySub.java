@@ -81,7 +81,7 @@ public class RestauranteWaySub {
                     numIngredientes = entrada.nextInt();
                     switch (numIngredientes) {
                         case 1:
-                        
+
                             baguette = new Cebolla(baguette);
                             break;
 
@@ -126,8 +126,6 @@ public class RestauranteWaySub {
                             break;
                     }
                 }
-                //el baguette es null
-                System.out.println(new TicketWaySub(baguette).toString());
                 break;
 
             case 2:
@@ -138,14 +136,12 @@ public class RestauranteWaySub {
                 restauranteAbsorbido.menuPizzas();
                 System.out.println("Digite el número de la pizza a ordenar...");
                 do{
-                    System.out.println("Elije una Opcion : ");
+                    System.out.println("Elije una opción : ");
                     try{
-        
                         eleccionPizza = entrada.nextInt();
                     }catch(Exception e){
                         System.out.println("Ingresa numeros por favor....");
                         entrada.nextLine();
-        
                     }
                     if(eleccionPizza <= 0 || eleccionPizza > 5){
                         System.out.println("Esa no es una opción váida");
@@ -160,9 +156,11 @@ public class RestauranteWaySub {
 
             case 3 :
             salir = true;
-            System.out.println("Nos vemos, hasta la proxima !!!");
+            System.out.println("Nos vemos, hasta la próxima!!!");
+            break;
+
             default:
-                System.out.println("Lo sentimos esa no es una opcion");
+                System.out.println("Lo sentimos esa no es una opción");
                 break;
         }
       }

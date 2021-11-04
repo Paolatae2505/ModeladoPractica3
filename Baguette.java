@@ -1,6 +1,6 @@
 public class Baguette implements ProductoBaguette {
     //private ProductoBaguette baguette;
-    private String descripcion = "Baguette de WaySub \n";
+    private String descripcion = "Baguette \n";
 
     /*public Baguette(ProductoBaguette baguette) {
         this.baguette = baguette;

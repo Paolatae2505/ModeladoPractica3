@@ -6,7 +6,15 @@ public class TicketWaySub {
     }
 
     public String toString() {
-        return baguette.getDescripcion() + "\n" + baguette.getCosto();
+        return "\n---------------------------------" +
+                "\n-------------Ticket--------------" +
+                "\n---------------------------------" +
+                "\n-- Resumen de compra: -----------\n" +
+                baguette.getDescripcion() + "\n"
+                + "----------Total a pagar----------"
+                + "\n -- $" + baguette.getCosto() +
+                "\n---------------------------------\n";
+
     }
 
 }
