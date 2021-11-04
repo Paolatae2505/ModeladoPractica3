@@ -7,7 +7,7 @@
  */
 
 public class Baguette implements ProductoBaguette {
-    private String descripcion = "Baguette \n";
+    private String descripcion = " ";
 
     /**
      * Regresa la descripción de la Baguette.

@@ -69,11 +69,11 @@ public class RestauranteWaySub {
                         System.out.println("Lo sentimos, esa no es una opción.");
                         break;
                 }
-                //baguette = elegirTipoDePan(numTipoDePan);
                 System.out.println(baguette.getDescripcion());
                 System.out.println("¿Qué ingredientes desea agregar?");
                 int numIngredientes = 0;
-                while (numIngredientes != 10) {
+                boolean ingredientesFinalizados = false;
+                while (ingredientesFinalizados == false) {
                     System.out.println("------------------------------------");
                     System.out.println("Digite el número del Ingrediente a Agregar...");
                     System.out.println("1) Cebolla ------------------ +$0.25");
@@ -87,14 +87,21 @@ public class RestauranteWaySub {
                     System.out.println("9) Pollo -------------------- +$10.00");
                     System.out.println("10) Es todo --------------------------");
                     System.out.println("--------------------------------------");
-                    numIngredientes = entrada.nextInt();
-                    while (!entrada.hasNextInt() ) {
-                        System.out.println("<Da una opción válida !!!>");
-                        entrada.nextLine();
-                    }
+                    do{
+                        System.out.println("Elije una opción : ");
+                        try{
+                            numIngredientes = entrada.nextInt();
+                        }catch(Exception e){
+                            System.out.println("Ingresa numeros por favor....");
+                            entrada.nextLine();
+                        }
+                        if(numIngredientes <= 0 || numIngredientes > 10){
+                            System.out.println("Esa no es una opción váida");
+                        }
+                    }while(numIngredientes <= 0  || numIngredientes > 10);
+
                     switch (numIngredientes) {
                         case 1:
-
                             baguette = new Cebolla(baguette);
                             break;
 
@@ -133,6 +140,7 @@ public class RestauranteWaySub {
                         case 10:
                             System.out.println(new TicketWaySub(baguette).toString());
                             System.out.println("¡Gracias por su compra!");
+                            ingredientesFinalizados = true;
                             break;
 
                         default:
